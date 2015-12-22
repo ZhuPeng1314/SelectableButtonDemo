@@ -10,11 +10,11 @@ import UIKit
 
 class ZPSelectableButton: UIButton {
     
-    private var zp_selectedCopy = false
+    //真实的选中状态
+    var selectedTruely = false
+    // UIControl中的selected只是为了表示当前UI是否应该处于selected UI
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        //在刚刚按下时保存selected状态
-        self.zp_selectedCopy = self.selected
         //让highlight UI能被显示出来，因为selected＝true的优先级比highlight＝true更高
         self.selected = false
         
@@ -22,12 +22,13 @@ class ZPSelectableButton: UIButton {
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        self.selected = self.zp_selectedCopy
+        self.selected = self.selectedTruely
         super.touchesCancelled(touches, withEvent: event)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.selected = !self.zp_selectedCopy //改变selected状态为目标状态
+        self.selectedTruely = !self.selectedTruely //改变真实的选中状态
+        self.selected = self.selectedTruely //改变selected状态为目标状态
         super.touchesEnded(touches, withEvent: event)
     }
 
