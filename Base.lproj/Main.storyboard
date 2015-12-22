@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZF-va-yW9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZF-va-yW9" customClass="ZPSelectableButton" customModule="SelectableButtonDemo" customModuleProvider="target">
                                 <rect key="frame" x="277" y="96" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -25,9 +25,6 @@
                                     <constraint firstAttribute="height" constant="30" id="lCG-op-qXs"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="button1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E3S-eb-qyh"/>
-                                </connections>
                             </button>
                         </subviews>
                         <animations/>

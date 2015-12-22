@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var button1: UIButton!
+    @IBOutlet var button1: ZPSelectableButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,15 +23,13 @@ class ViewController: UIViewController {
         
         // 需要在StoryBoard当中固定按钮的高宽约束，以免图片View对button的高宽产生不必要的影响。
         button1.setBackgroundImage(UIImage(named: "button-selected"), forState: UIControlState.Selected)
+        button1.setBackgroundImage(UIImage(named: "button-selected"), forState: UIControlState.Highlighted)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-
-    @IBAction func button1Pressed(sender: UIButton) {
-        sender.selected = !sender.selected
-    }
+   
 }
 
